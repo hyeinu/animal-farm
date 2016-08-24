@@ -24,12 +24,12 @@ export default class App extends Component {
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pet Types <span className="caret"></span></a>
                 <ul className="dropdown-menu">
-                  <li><a href="/search/cats">Cat</a></li>
-                  <li><a href="/search/dogs">Dog</a></li>
-                  <li><a href="/search/rabbits">Rabbit</a></li>
-                  <li><a href="/search/birds">Bird</a></li>
+                  <li><Link to="/search/cat">Cat</Link></li>
+                  <li><Link to="/search/dog">Dog</Link></li>
+                  <li><Link to="/search/rabbit">Rabbit</Link></li>
+                  <li><Link to="/search/bird">Bird</Link></li>
                   <li role="separator" className="divider"></li>
-                  <li><a href="/search/pets">All Pets</a></li>
+                  <li><Link to="/search/pet">All Pets</Link></li>
                 </ul>
               </li>
             </ul>

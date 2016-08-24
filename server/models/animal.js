@@ -12,11 +12,10 @@ const animalSchema = new mongoose.Schema({
 })
 
 
-animalSchema.statics.getAnimal = function(cb){
+animalSchema.statics.getAnimal = function(field, cb){
     this
       .find({})
-      .sort('type')
-      .limit(5)
+      .sort(field)
       .exec((err, animals) => {
         if (err) return cb(err)
         else cb(err, animals);

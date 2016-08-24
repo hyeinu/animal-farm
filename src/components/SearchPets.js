@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'
 import  ClientActions  from '../actions/ClientActions'
+import  PetStore  from '../stores/PetStore'
 
 //localhost:8000/search/:type
 
@@ -23,6 +23,9 @@ export default class SearchPets extends Component {
     this.setState({pets: PetStore.getAll()})
   }
   render(){
-
+    let type = this.props.params.type
+    return(
+      <h2>This is the search page {type}</h2>
+    )
   }
 }
