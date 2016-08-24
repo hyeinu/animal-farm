@@ -6,6 +6,7 @@ const animalSchema = new mongoose.Schema({
   name: { type: String, required: true },
   type: { type: String, required: true },
   age: { type: Number, required: true, min: 0},
+  gender: { type: String, required: true, default: true},
   owner: { type: Schema.Types.ObjectId, ref: 'Person' },
   previousOwners: [{ type: Schema.Types.ObjectId, ref: 'Person' }]
 })
