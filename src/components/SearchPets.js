@@ -5,16 +5,17 @@ import  PetStore  from '../stores/PetStore'
 //localhost:8000/search/:type
 
 export default class SearchPets extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
+
     this.state ={
-      pets: []
+      pets: ClientActions.getPets(this.props.params.type)
     }
+
     this._onChange = this._onChange.bind(this)
   }
   componentDidMount(){
     PetStore.startListening(this._onChange)
-    ClientActions.getPets(this.props.params.type)
   }
   componentWillUnmount(){
     PetStore.stopListening(this._onChange)
@@ -24,6 +25,7 @@ export default class SearchPets extends Component {
   }
   render(){
     let type = this.props.params.type
+    
     return(
       <h2>This is the search page {type}</h2>
     )

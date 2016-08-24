@@ -36,4 +36,4 @@ class PetStore extends EventEmitter{
 
 }
 
-export default new StockStore()
+export default new PetStore()
