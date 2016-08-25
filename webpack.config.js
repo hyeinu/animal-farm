@@ -3,7 +3,6 @@ const path = require('path');
 
 module.exports = {
   entry: [
-    'webpack-hot-middleware/client?reload=true',
     'bootstrap-loader',
     './src/index'
   ],
@@ -13,11 +12,11 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    // new webpack.optimize.UglifyJSPlugin({
-    //   compress:{
-    //     warnings: false
-    //   }
-    // })
+    new webpack.optimize.UglifyJSPlugin({
+      compress:{
+        warnings: false
+      }
+    })
   ],
   module: {
     loaders: [
