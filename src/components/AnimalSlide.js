@@ -25,8 +25,8 @@ export default class AnimalSlide extends Component {
     this.setState({pets: PetStore.getAll()})
   }
   render(){
-    let petDivs = this.state.pets.map(pet => {
-      return <Pet petInfo={pet}/>
+    let petDivs = this.state.pets.map((pet, index) => {
+      return <Pet key={index} petInfo={pet}/>
     })
     return(
       <div className="animalSlide">

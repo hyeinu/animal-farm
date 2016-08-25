@@ -4,8 +4,6 @@ import  ClientActions  from '../actions/ClientActions'
 import  PetStore  from '../stores/PetStore'
 import  PetRow  from './PetRow'
 
-//localhost:8000/search/:type
-
 export default class SearchPets extends Component {
   constructor(props){
     super(props);
@@ -49,10 +47,11 @@ export default class SearchPets extends Component {
           <thead>
             <tr>
               <th onClick={this.sortField.bind(null, 'name')} className="col-xs-2">Name <i className="fa fa-sort fa-xs"></i></th>
-              <th onClick={this.sortField.bind(null, 'type')} className="col-xs-2">Type <i className="fa fa-sort fa-xs"></i></th>
-              <th onClick={this.sortField.bind(null, 'age')} className="col-xs-2">Age <i className="fa fa-sort fa-xs"></i></th>
-              <th onClick={this.sortField.bind(null, 'gender')} className="col-xs-2">Gender <i className="fa fa-sort fa-xs"></i></th>
+              <th onClick={this.sortField.bind(null, 'type')} className="col-xs-1">Type <i className="fa fa-sort fa-xs"></i></th>
+              <th onClick={this.sortField.bind(null, 'age')} className="col-xs-1">Age <i className="fa fa-sort fa-xs"></i></th>
+              <th onClick={this.sortField.bind(null, 'gender')} className="col-xs-1">Gender <i className="fa fa-sort fa-xs"></i></th>
               <th className="col-xs-3">Image</th>
+              <th className="col-xs-2">Owner</th>
               <th className="col-xs-2">More Info</th>
             </tr>
           </thead>

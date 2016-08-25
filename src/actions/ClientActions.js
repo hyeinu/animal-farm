@@ -21,6 +21,12 @@ const ClientActions = {
   },
   addOwner(newOwner){
     API.addOwner(newOwner);
+  },
+  adoptPet(petid, ownerid){
+    API.adoptPet(petid, ownerid);
+  },
+  deleteOwner(id){
+    API.deleteOwner(id);
   }
 }
 

@@ -31,7 +31,7 @@ const ServerAction = {
       owners
     })
   },
-  getOwners(owner){
+  getNewOwner(owner){
     AppDispatcher.dispatch({
       type: Constants.GET_OWNER,
       owner

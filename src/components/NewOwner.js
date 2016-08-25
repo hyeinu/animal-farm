@@ -11,11 +11,12 @@ export default class NewOwner extends Component {
     }
     this._nameChange = this._nameChange.bind(this)
     this._emailChange = this._emailChange.bind(this)
+    this._addOwner = this._addOwner.bind(this)
   }
-  _nameChange(){
+  _nameChange(e){
     this.setState({name: e.target.value})
   }
-  _emailChange(){
+  _emailChange(e){
     this.setState({email: e.target.value})
   }
   _addOwner(e){

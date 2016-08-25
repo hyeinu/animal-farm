@@ -7,7 +7,6 @@ export default class App extends Component {
     super();
     this.state = {
       name: '',
-      age: undefined,
       gender: '',
       type: '',
       image: ''
@@ -37,7 +36,6 @@ export default class App extends Component {
   _addAnimal(e){
     e.preventDefault()
     let newObj = this.state
-    console.log('newObj:', newObj)
     ClientActions.addPet(newObj)
     this.setState({
       name: '',

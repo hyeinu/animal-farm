@@ -20,17 +20,6 @@ router.get('/sort/:field', (req, res) => {
   })
 })
 
-
-  // Animal.findById(req.params.id)
-  //   .populate('owner')
-  //   .exec(err, animal) =>{
-  //   if(err || !animal){
-  //     return res.status(400).send(err || 'Animal not found.')
-  //   }
-  //   res.send(animal);
-  // }).populate('owner')
-
-
 router.get('/search/pet', (req, res) =>{
   Animal.find({}, (err, animal) =>{
     res.status(err ? 400: 200).send(err || animal);
@@ -53,6 +42,23 @@ router.put('/:animalId/addOwner/:ownerId', (req, res) => {
     let ownerId = req.params.ownerId;
     animal.owner = ownerId;
 
+    animal.save((err, savedAnimal) =>{
+      Animal.findById(savedAnimal._id, (err, animal) =>{
+        if(err || !animal){
+          return res.status(400).send(err || 'Animal not found.')
+        }
+        res.send(animal);
+      }).populate('owner')
+    })
+  })
+})
+
+router.put('/:id/removeOwner', (req, res) =>{
+  Animal.findById(req.params.id, (err, animal) =>{
+    if(err || !animal){
+      return res.status(400).send(err || 'Animal not found.')
+    }
+    animal.owner = null;
     animal.save((err, savedAnimal) =>{
       res.status(err ? 400: 200).send(err || savedAnimal)
     })

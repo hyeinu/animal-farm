@@ -82,6 +82,30 @@ const API = {
     .catch(err =>{
       console.log('err:', err)
     })
+  },
+  adoptPet(petid, ownerid){
+    axios.put(`/api/animals/${petid}/addOwner/${ownerid}`)
+    .then(res =>{
+      return res.data
+    })
+    .then(data =>{
+      ServerAction.getOnePet(data);
+    })
+    .catch(err =>{
+      console.log('err:', err)
+    })
+  },
+  deleteOwner(id){
+    axios.put(`/api/animals/${id}/removeOwner`)
+    .then(res =>{
+      return res.data
+    })
+    .then(data =>{
+      ServerAction.getOnePet(data);
+    })
+    .catch(err =>{
+      console.log('err:', err)
+    })
   }
 }
 
