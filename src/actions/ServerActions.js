@@ -13,6 +13,17 @@ const ServerAction = {
       type: Constants.RECIEVE_PET,
       pet
     })
+  },
+  getNewPet(pet){
+    AppDispatcher.dispatch({
+      type: Constants.RECIEVE_NEW_PET,
+      pet
+    })
+  },
+  deletePet(){
+    AppDispatcher.dispatch({
+      type: Constants.DELETE_PET
+    })
   }
 }
 

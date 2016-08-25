@@ -6,10 +6,16 @@ const ClientActions = {
   },
   getOnePet(id){
     API.getOnePet(id);
+  },
+  sortPets(field){
+    API.sortPets(field);
+  },
+  addPet(obj){
+    API.addPet(obj);
+  },
+  deletePet(id){
+    API.deletePet(id);
   }
-  // getCharts(symbol){
-  //   API.getCharts(symbol);
-  // }
 }
 
 export default ClientActions

@@ -31,6 +31,11 @@ router.get('/sort/:field', (req, res) => {
   // }).populate('owner')
 
 
+router.get('/search/pet', (req, res) =>{
+  Animal.find({}, (err, animal) =>{
+    res.status(err ? 400: 200).send(err || animal);
+  })
+})
 router.get('/search/:type', (req, res) =>{
   Animal.find({type: req.params.type}, (err, animals) =>{
     if(err || !animals){
@@ -60,7 +65,7 @@ router.route('/:id')
       if(err || !deleteAnimal){
         return res.status(400).send(err || 'Animal not found.')
       }
-      return res.status(200).json(`${deletedAnimal.name} was removed!`)
+      return res.status(200).json(`${deleteAnimal.name} was removed!`)
     })
   })
   .put((req, res) =>{

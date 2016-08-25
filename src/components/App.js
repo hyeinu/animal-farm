@@ -1,7 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
+import Modal from './Modal'
 
 export default class App extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      showModal: false
+    }
+
+    this._showModal = this._showModal.bind(this)
+    this._hideModal = this._hideModal.bind(this)
+  }
+  _showModal(){
+    this.setState({showModal:true})
+  }
+  _hideModal(){
+    this.setState({showModal:false})
+  }
   render() {
     let term = ''
     return (
@@ -20,7 +37,7 @@ export default class App extends Component {
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/search/owners">Owner Profiles</Link></li>
+                <li><Link to="/search/owners">Owner</Link></li>
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pet Types <span className="caret"></span></a>
                 <ul className="dropdown-menu">
@@ -33,6 +50,9 @@ export default class App extends Component {
                 </ul>
               </li>
             </ul>
+            <ul className="nav navbar-nav navbar-right">
+             <li><a href="#" onClick={this._showModal}>Add Pet</a></li>
+            </ul>
           </div>
           </div>
         </nav>
@@ -42,6 +62,7 @@ export default class App extends Component {
               {this.props.children}
             </div>
         </div>
+        <Modal closeModal={this._hideModal} showModal={this.state.showModal}/>
       </div>
     )
   }

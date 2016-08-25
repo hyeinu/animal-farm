@@ -15,6 +15,7 @@ export default class SearchPets extends Component {
     }
 
     this._onChange = this._onChange.bind(this)
+    this.sortField = this.sortField.bind(this)
   }
   componentDidMount(){
     PetStore.startListening(this._onChange)
@@ -27,6 +28,9 @@ export default class SearchPets extends Component {
   }
   _onChange(){
     this.setState({pets: PetStore.getAll()})
+  }
+  sortField(field){
+    ClientActions.sortPets(field)
   }
   render(){
     let type = this.props.params.type
@@ -44,10 +48,10 @@ export default class SearchPets extends Component {
         <table className="table">
           <thead>
             <tr>
-              <th className="col-xs-2">Name</th>
-              <th className="col-xs-2">Type</th>
-              <th className="col-xs-2">Age</th>
-              <th className="col-xs-2">Gender</th>
+              <th onClick={this.sortField.bind(null, 'name')} className="col-xs-2">Name <i className="fa fa-sort fa-xs"></i></th>
+              <th onClick={this.sortField.bind(null, 'type')} className="col-xs-2">Type <i className="fa fa-sort fa-xs"></i></th>
+              <th onClick={this.sortField.bind(null, 'age')} className="col-xs-2">Age <i className="fa fa-sort fa-xs"></i></th>
+              <th onClick={this.sortField.bind(null, 'gender')} className="col-xs-2">Gender <i className="fa fa-sort fa-xs"></i></th>
               <th className="col-xs-3">Image</th>
               <th className="col-xs-2">More Info</th>
             </tr>

@@ -19,6 +19,13 @@ class PetStore extends EventEmitter{
           _onePet = action.pet
           this.emit('CHANGE')
           break;
+        case Constants.RECIEVE_NEW_PET:
+          _pets.push(action.pet)
+          this.emit('CHANGE')
+          break;
+        case Constants.DELETE_PET:
+          this.emit('CHANGE')
+          break;
       }
     });
   }
