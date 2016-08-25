@@ -106,6 +106,18 @@ const API = {
     .catch(err =>{
       console.log('err:', err)
     })
+  },
+  deleteProfile(id){
+    axios.delete(`/api/people/${id}`)
+    .then(res =>{
+      return res.data
+    })
+    .then(data =>{
+      ServerAction.getOwners(data)
+    })
+    .catch(err =>{
+      console.log('err:', err)
+    })
   }
 }
 

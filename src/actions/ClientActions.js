@@ -27,6 +27,9 @@ const ClientActions = {
   },
   deleteOwner(id){
     API.deleteOwner(id);
+  },
+  deleteProfile(id){
+    API.deleteProfile(id);
   }
 }
 

@@ -20,6 +20,9 @@ export default class OwnerProfile extends Component {
   _onChange(){
     this.setState({owners: OwnerStore.getAll()})
   }
+  deleteProfile(id){
+    ClientActions.deleteProfile(id);
+  }
   render(){
     let ownerProfiles
     if(this.state.owners.length){
@@ -28,7 +31,7 @@ export default class OwnerProfile extends Component {
           <tr key={index}>
             <td>{owner.name}</td>
             <td>{owner.email}</td>
-            <td><button className="btn btn-danger" onClick={this.deleteProfile}><i className="fa fa-trash"></i></button></td>
+            <td><button className="btn btn-danger" onClick={this.deleteProfile.bind(null, owner._id)}><i className="fa fa-trash"></i></button></td>
           </tr>
         )
       })
