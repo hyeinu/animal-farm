@@ -10,6 +10,9 @@
     "prod": "NODE_ENV='production' npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "6.3.1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
