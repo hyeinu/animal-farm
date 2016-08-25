@@ -37,7 +37,7 @@ router.get('/search/:type', (req, res) =>{
       return res.status(400).send(err || 'Animals not found.')
     }
     res.send(animals);
-  }).populate('owner previousOwners')
+  })
 })
 
 router.put('/:animalId/addOwner/:ownerId', (req, res) => {

@@ -3,6 +3,7 @@ import AppDispatcher from '../AppDispatcher'
 import Constants from '../Constants'
 
 let _pets = [];
+let _onePet = [];
 
 class PetStore extends EventEmitter{
   constructor(){
@@ -14,10 +15,10 @@ class PetStore extends EventEmitter{
           _pets = action.pets;
           this.emit('CHANGE');
           break;
-        // case Constants.RECIEVE_DETAILS:
-        //   _details = action.details
-        //   this.emit('CHANGE')
-        //   break;
+        case Constants.RECIEVE_PET:
+          _onePet = action.pet
+          this.emit('CHANGE')
+          break;
       }
     });
   }
@@ -32,6 +33,9 @@ class PetStore extends EventEmitter{
 
   getAll(){
     return _pets;
+  }
+  getOnePet(){
+    return _onePet;
   }
 
 }

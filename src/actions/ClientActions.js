@@ -3,10 +3,10 @@ import API from '../API'
 const ClientActions = {
   getPets(type){
     API.getPets(type);
+  },
+  getOnePet(id){
+    API.getOnePet(id);
   }
-  // getDetails(symbol){
-  //   API.getDetails(symbol);
-  // },
   // getCharts(symbol){
   //   API.getCharts(symbol);
   // }

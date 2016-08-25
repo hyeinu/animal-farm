@@ -8,10 +8,10 @@ const ServerAction = {
       pets
     })
   },
-  recieveOneContact(contact){
+  getOnePet(pet){
     AppDispatcher.dispatch({
-      type: 'CREATE_CONTACT',
-      contact
+      type: Constants.RECIEVE_PET,
+      pet
     })
   }
 }
