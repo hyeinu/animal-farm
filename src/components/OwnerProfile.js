@@ -25,6 +25,9 @@ export default class OwnerProfile extends Component {
   }
   render(){
     let ownerProfiles
+    if(!this.state.owners){
+      return(<h2>Loading...</h2>)
+    }
     if(this.state.owners.length){
       ownerProfiles = this.state.owners.map((owner, index) =>{
         return (

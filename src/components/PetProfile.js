@@ -64,6 +64,9 @@ export default class PetProfile extends Component {
     ClientActions.deleteOwner(petid)
   }
   render(){
+    if(!this.state.pet){
+      return (<h2>Loading...</h2>)
+    }
     let { name, type, age, gender, image, owner, _id } = this.state.pet
 
     let genIcon
