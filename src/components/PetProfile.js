@@ -120,5 +120,4 @@ export default class PetProfile extends Component {
       </div>
     )
   }
-
 }

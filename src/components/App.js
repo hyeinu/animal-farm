@@ -1,23 +1,33 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
 import Modal from './Modal'
+import OwnerModal from './OwnerModal'
 
 export default class App extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-      showModal: false
+      showModal: false,
+      showOwnModal: false
     }
 
     this._showModal = this._showModal.bind(this)
     this._hideModal = this._hideModal.bind(this)
+    this._showOwnModal = this._showOwnModal.bind(this)
+    this._hideOwnModal = this._hideOwnModal.bind(this)
   }
   _showModal(){
     this.setState({showModal:true})
   }
   _hideModal(){
     this.setState({showModal:false})
+  }
+  _showOwnModal(){
+    this.setState({showOwnModal:true})
+  }
+  _hideOwnModal(){
+    this.setState({showOwnModal:false})
   }
   render() {
     let term = ''
@@ -51,7 +61,8 @@ export default class App extends Component {
               </li>
             </ul>
             <ul className="nav navbar-nav navbar-right">
-             <li><a href="#" onClick={this._showModal}>Add Pet</a></li>
+              <li><a href="#" onClick={this._showOwnModal}>Register</a></li>
+              <li><a href="#" onClick={this._showModal}>Add Pet</a></li>
             </ul>
           </div>
           </div>
@@ -63,6 +74,7 @@ export default class App extends Component {
             </div>
         </div>
         <Modal closeModal={this._hideModal} showModal={this.state.showModal}/>
+        <OwnerModal closeOwnModal={this._hideOwnModal} showOwnModal={this.state.showOwnModal}/>
       </div>
     )
   }

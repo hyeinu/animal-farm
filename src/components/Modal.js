@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Modal, Button, FormControl, ControlLabel } from 'react-bootstrap'
 import  ClientActions  from '../actions/ClientActions'
 
-export default class App extends Component {
+export default class AddModal extends Component {
   constructor(){
     super();
     this.state = {
