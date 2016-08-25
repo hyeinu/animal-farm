@@ -4,14 +4,18 @@ import Constants from '../Constants'
 
 let _owners = [];
 
-class PetStore extends EventEmitter{
+class OwnerStore extends EventEmitter{
   constructor(){
     super();
 
     AppDispatcher.register(action =>{
       switch(action.type){
-        case Constants.RECIEVE_OWNERS:
+        case Constants.GET_OWNERS:
           _owners = action.owners;
+          this.emit('CHANGE');
+          break;
+        case Constants.GET_OWNER:
+          _owners.push(action.owner);
           this.emit('CHANGE');
           break;
       }
@@ -31,4 +35,4 @@ class PetStore extends EventEmitter{
   }
 }
 
-export default new PetStore()
+export default new OwnerStore()

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Button, FormControl } from 'react-bootstrap'
 import  ClientActions  from '../actions/ClientActions'
-import NewOwner from './NewOwner'
 
 export default class NewOwner extends Component {
   constructor(props){
     super(props)
     this.state = {
-      name: ''
+      name: '',
       email: ''
     }
     this._nameChange = this._nameChange.bind(this)
@@ -24,7 +23,7 @@ export default class NewOwner extends Component {
     let newOwner = this.state;
     ClientActions.addOwner(newOwner)
     this.setState({
-      name: ''
+      name: '',
       email: ''
     })
   }
@@ -32,8 +31,8 @@ export default class NewOwner extends Component {
     return(
       <form>
         <FormControl onChange={this._nameChange} value={this.state.name} type="text" placeholder="Name" required/>
-        <FormControl onChange={this._emailChange} value={this.state.email} type="text" placeholder="Name" required/>
-        <Button className="btn btn-success" onClick={this._addOwner}>Add</Button>
+        <FormControl onChange={this._emailChange} value={this.state.email} type="text" placeholder="Email" required/>
+        <Button className="btn btn-success form-control" onClick={this._addOwner}>Add</Button>
       </form>
     )
   }

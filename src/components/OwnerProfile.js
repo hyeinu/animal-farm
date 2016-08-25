@@ -12,7 +12,7 @@ export default class OwnerProfile extends Component {
     this._onChange = this._onChange.bind(this)
   }
   componentDidMount(){
-    OwnerStore.startlistening(this._onChange)
+    OwnerStore.startListening(this._onChange)
   }
   componentWillUnmount(){
     OwnerStore.stopListening(this._onChange)
@@ -32,22 +32,30 @@ export default class OwnerProfile extends Component {
           </tr>
         )
       })
+    } else {
+      ownerProfiles = (<tr></tr>)
     }
     return(
       <div>
+      <div className="col-xs-3">
+      <br />
+        <NewOwner />
+      </div>
+      <div className="col-xs-9">
         <table className="table">
-        <thead>
-          <th>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Delete Profile</td>
-          </th>
-        </thead>
-        <tbody>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Delete Profile</th>
+            </tr>
+          </thead>
+          <tbody>
           {ownerProfiles}
-        </tbody>
+          </tbody>
         </table>
 
+      </div>
       </div>
     )
   }

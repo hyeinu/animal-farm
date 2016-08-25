@@ -58,6 +58,30 @@ const API = {
       .catch(err =>{
         console.log('err:', err)
       })
+  },
+  getOwners(){
+    axios.get(`/api/people/`)
+    .then(res =>{
+      return res.data
+    })
+    .then(data =>{
+      ServerAction.getOwners(data);
+    })
+    .catch(err =>{
+      console.log('err:', err)
+    })
+  },
+  addOwner(newOwner){
+    axios.post(`/api/people/`, newOwner)
+    .then(res =>{
+      return res.data
+    })
+    .then(data =>{
+      ServerAction.getNewOwner(data);
+    })
+    .catch(err =>{
+      console.log('err:', err)
+    })
   }
 }
 

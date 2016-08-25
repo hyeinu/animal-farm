@@ -10,9 +10,9 @@ import OwnerProfile from './components/OwnerProfile'
 render(
   <Router history={browserHistory}>
     <Route path='/' component={App}>
+      <Route path='search/owners' component={OwnerProfile} />
       <Route path='search/:type' component={SearchPets} />
       <Route path='pet/:id' component={PetProfile} />
-      <Route path='search/owner' component={OwnerProfile} />
     </Route>
   </Router>,
   document.getElementById('root')

@@ -24,6 +24,18 @@ const ServerAction = {
     AppDispatcher.dispatch({
       type: Constants.DELETE_PET
     })
+  },
+  getOwners(owners){
+    AppDispatcher.dispatch({
+      type: Constants.GET_OWNERS,
+      owners
+    })
+  },
+  getOwners(owner){
+    AppDispatcher.dispatch({
+      type: Constants.GET_OWNER,
+      owner
+    })
   }
 }
 

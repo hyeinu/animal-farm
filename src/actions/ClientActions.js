@@ -15,6 +15,12 @@ const ClientActions = {
   },
   deletePet(id){
     API.deletePet(id);
+  },
+  getOwners(){
+    API.getOwners();
+  },
+  addOwner(newOwner){
+    API.addOwner(newOwner);
   }
 }
 
