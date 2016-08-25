@@ -12,7 +12,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.optimize.UglifyJSPlugin({
+    new webpack.optimize.UglifyJsPlugin({
       compress:{
         warnings: false
       }
