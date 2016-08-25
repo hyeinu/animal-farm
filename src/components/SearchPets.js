@@ -51,7 +51,7 @@ export default class SearchPets extends Component {
               <th onClick={this.sortField.bind(null, 'age')} className="col-xs-1">Age <i className="fa fa-sort fa-xs"></i></th>
               <th onClick={this.sortField.bind(null, 'gender')} className="col-xs-1">Gender <i className="fa fa-sort fa-xs"></i></th>
               <th className="col-xs-3">Image</th>
-              <th onClick={this.sortField.bind(null, 'owner')} className="col-xs-2">Owner <i className="fa fa-sort fa-xs"></i></th>
+              <th onClick={this.sortField.bind(null, 'owner')} className="col-xs-2">Adopt Status <i className="fa fa-sort fa-xs"></i></th>
               <th className="col-xs-2">More Info</th>
             </tr>
           </thead>
