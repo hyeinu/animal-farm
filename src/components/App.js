@@ -68,7 +68,7 @@ export default class App extends Component {
           </div>
         </nav>
         <div className="container">
-          <h1 className="text-center">Animal Farm</h1>
+          <h1 className="text-center splashTitle">Animal Farm</h1>
             <div className="row">
               {this.props.children}
             </div>

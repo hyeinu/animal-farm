@@ -35,7 +35,6 @@ if(process.env.NODE_ENV === 'production'){
 
 }
 
-
 // GENERAL MIDDLEWARE
 app.use(morgan('dev'));
 app.use(bodyParser.json());

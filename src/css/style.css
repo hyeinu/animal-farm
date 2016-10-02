@@ -2,3 +2,16 @@
   height: 300px;
   overflow: auto;
 }
+
+.background-pic {
+  background-image: url('http://wallpapercave.com/wp/25WHrOB.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.splashTitle {
+  font-size: 100px;
+  color: indianred;
+  font-family: 'Lobster', cursive;
+  text-shadow: 2px 2px pink;
+}
